@@ -1,4 +1,3 @@
-#导入库-------------------------------------------
 from urllib import request
 from chardet import detect
 from bs4 import BeautifulSoup
@@ -29,7 +28,7 @@ def getData(soup):
     data=pd.DataFrame({'name':film_names,'year':film_years,'score':film_scores,'actors':film_actors,'newurl':next_nurl})      
     return data    
 
-#获取详情页数据-------------------------------------------
+#获取详情页数据--------------------------------------
 def nextUrl(detail,detail1):
     #获取电影国家
     detail_list = detail.find('div',attrs={'id':'titleDetails'}).find_all('div',attrs={'class':'txt-block'})
